@@ -1,0 +1,18 @@
+mkdir example && cd example
+
+# Create an isolated Python virtual environment
+pip install virtualenv
+virtualenv ./virtualenv --python=$(which python3)
+
+# Activate the virtualenv
+# IMPORTANT: it needs to be activated every time before you run
+. virtualenv/bin/activate
+
+# Get the code
+git clone https://github.com/dearvn/tradingview
+
+# Install Python requirements
+pip install -r tradingview/requirements.txt
+
+# Install cointrol-*
+pip install -e ./tradingview
